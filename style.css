@@ -1,0 +1,10 @@
+/* style.css */
+/*
+  Ce fichier est maintenant vide car nous avons migré vers Tailwind CSS.
+  La philosophie de Tailwind est de mettre les styles directement dans le HTML
+  via des classes utilitaires.
+  
+  Vous pouvez utiliser ce fichier si vous avez besoin d'écrire des styles très complexes,
+  des animations keyframe, ou pour appliquer un style à une classe que vous ne pouvez pas
+  modifier directement dans le HTML (par exemple, issue d'une librairie externe).
+*/

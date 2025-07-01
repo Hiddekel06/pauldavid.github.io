@@ -3,18 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de Paul David</title>
-    <style>
-        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f0f2f5; margin: 0; }
-        .container { text-align: center; }
-        h1 { color: #333; }
-    </style>
+    <title>Portfolio | Paul David</title>
+    <!-- Script CDN de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- On garde notre propre CSS pour les futures personnalisations -->
+    <link rel="stylesheet" href="style.css"> 
 </head>
-<body>
-    <div class="container">
-        <h1>Bonjour, je suis Paul David</h1>
-        <p>Bienvenue sur mon portfolio. Site en construction !</p>
-    </div>
+<body class="bg-gray-50 text-gray-800">
+    <!-- 
+      Barre de navigation :
+      - bg-gray-900: Fond très sombre.
+      - text-white: Texte blanc.
+      - shadow-md: Ajoute une ombre moyenne pour un effet de profondeur.
+    -->
+    <nav class="bg-gray-900 text-white shadow-md sticky top-0 z-50">
+        <!-- 
+          Conteneur :
+          - container: Centre le contenu et définit une largeur maximale.
+          - mx-auto: Centre le conteneur horizontalement (margin x-axis auto).
+          - px-6: Ajoute un padding (marge intérieure) à gauche et à droite.
+          - py-4: Ajoute un padding en haut et en bas.
+        -->
+        <div class="container mx-auto px-6 py-4">
+            <!-- 
+              Logo / Nom :
+              - text-xl: Taille de texte "extra large".
+              - font-bold: Met le texte en gras.
+            -->
+            <a href="#" class="text-xl font-bold">Paul David</a>
+        </div>
+    </nav>
+
+    <!-- 
+      Section "Héros" (Introduction) :
+      - container mx-auto px-6 py-16: Conteneur centré avec des marges intérieures.
+      - min-h-[calc(100vh-68px)]: Hauteur minimale égale à 100% de la hauteur de l'écran moins la hauteur de la nav (68px).
+      - flex items-center: Utilise Flexbox pour centrer le contenu verticalement.
+    -->
+    <header class="container mx-auto px-6 py-16 min-h-[calc(100vh-68px)] flex items-center">
+        <!-- 
+          Grille pour le layout Texte / Image :
+          - grid: Active le layout en grille.
+          - lg:grid-cols-2: Sur les grands écrans (lg), crée 2 colonnes de taille égale. Par défaut (mobile), il n'y a qu'une colonne.
+          - gap-12: Espace de 12 unités entre les éléments de la grille.
+          - items-center: Centre les éléments de la grille verticalement.
+        -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- 
+              Partie Texte :
+              - order-last lg:order-first: Par défaut (mobile), le texte est en dernier. Sur grand écran (lg), il passe en premier.
+              - text-center lg:text-left: Texte centré sur mobile, aligné à gauche sur grand écran.
+            -->
+            <div class="order-last lg:order-first text-center lg:text-left">
+                <!-- 
+                  Titre principal :
+                  - text-4xl lg:text-6xl: Taille de police 4xl sur mobile, 6xl sur grand écran.
+                  - font-extrabold: Police très grasse.
+                  - text-gray-900: Couleur de texte très sombre.
+                  - leading-tight: Réduit l'espace entre les lignes de texte (interlignage).
+                  - mb-4: Ajoute une marge en bas (margin-bottom).
+                -->
+                <h1 class="text-4xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-4">Bonjour, je suis Paul David.</h1>
+                <!-- Paragraphe de description -->
+                <p class="text-lg text-gray-600 mb-8">Développeur passionné et créatif, spécialisé dans la création d'applications web modernes et intuitives. Bienvenue sur mon portfolio !</p>
+                <!-- 
+                  Conteneur pour les boutons :
+                  - flex: Active Flexbox.
+                  - justify-center lg:justify-start: Centre les boutons sur mobile, les aligne à gauche sur grand écran.
+                  - gap-4: Ajoute un espace entre les boutons.
+                -->
+                <div class="flex justify-center lg:justify-start gap-4">
+                    <!-- 
+                      Bouton principal :
+                      - bg-blue-600: Couleur de fond bleue.
+                      - hover:bg-blue-700: Change la couleur au survol.
+                      - text-white font-bold: Texte blanc et gras.
+                      - py-3 px-8: Padding vertical et horizontal pour donner de la taille au bouton.
+                      - rounded-lg: Coins arrondis.
+                      - transition duration-300 ease-in-out: Animation de transition fluide.
+                    -->
+                    <a href="#projets" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 ease-in-out">Mes Projets</a>
+                    <!-- Bouton secondaire -->
+                    <a href="#contact" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-8 rounded-lg transition duration-300 ease-in-out">Me Contacter</a>
+                </div>
+            </div>
+            <!-- Conteneur pour l'image -->
+            <!-- 
+              Conteneur pour l'image :
+              - flex justify-center: Centre l'image sur mobile.
+              - lg:justify-end: Aligne l'image à droite dans sa colonne sur les grands écrans.
+            -->
+            <div class="flex justify-center lg:justify-end">
+                <!-- REMPLACEZ CE LIEN PAR VOTRE IMAGE -->
+                <!-- 
+                  Image de profil :
+                  - w-72 h-72: Taille sur mobile (288px).
+                  - md:w-80 md:h-80: Taille sur écrans moyens (320px).
+                  - object-cover: Assure que l'image remplit l'espace sans être déformée.
+                  - shadow-2xl: Ajoute une grande ombre pour un effet de relief.
+                -->
+                <img src="Image/Me.jpg" class="w-72 h-72 md:w-80 md:h-80 object-cover shadow-2xl" alt="Photo de Paul David" loading="lazy">
+            </div>
+        </div>
+    </header>
+
+    <!-- 
+      Section Projets :
+      - id="projets": Ancre pour le lien de navigation.
+      - py-20: Grand padding vertical.
+      - bg-gray-100: Fond gris clair pour contraster avec la section précédente.
+    -->
+    <section id="projets" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <!-- Titre de la section -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold">Mes Projets</h2>
+                <p class="text-gray-600 mt-2">Voici quelques projets sur lesquels j'ai travaillé.</p>
+            </div>
+            <!-- Grille pour les cartes de projet -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 
+                  Carte de Projet 1 (les autres sont identiques) :
+                  - group: CLÉ ! Permet de changer le style des enfants quand on survole ce parent.
+                  - relative: Nécessaire pour positionner l'image et le texte en absolu à l'intérieur.
+                  - block: Assure que l'élément prend toute la largeur disponible.
+                  - bg-black rounded-lg shadow-lg overflow-hidden: Style de base de la carte.
+                -->
+                <div class="group relative block bg-black rounded-lg shadow-lg overflow-hidden">
+                    <!-- 
+                      Image de la carte :
+                      - absolute inset-0: S'étire pour remplir tout le parent (`group`).
+                      - h-full w-full object-cover: Remplit l'espace sans déformation.
+                      - opacity-75: Opacité par défaut.
+                      - transition-opacity group-hover:opacity-50: Au survol du `group`, l'opacité passe à 50% avec une transition.
+                    -->
+                    <img alt="Aperçu du projet 1" src="https://placehold.co/600x400/3b82f6/white?text=Projet+1" class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50" />
+                    <!-- 
+                      Conteneur pour le texte, superposé à l'image :
+                      - relative: Se place au-dessus des éléments en `absolute`.
+                      - p-8: Padding intérieur.
+                    -->
+                    <div class="relative p-8">
+                        <!-- Catégorie du projet -->
+                        <p class="text-sm font-medium uppercase tracking-widest text-blue-400">
+                            Développement Web
+                        </p>
+                        <!-- Titre du projet -->
+                        <p class="text-2xl font-bold text-white">Nom du Projet 1</p>
+                        <!-- 
+                          Conteneur pour la description qui apparaîtra au survol :
+                          - mt-64: Marge haute ÉNORME pour pousser la description hors du cadre visible.
+                        -->
+                        <div class="mt-64">
+                            <!-- 
+                              La description animée :
+                              - translate-y-8: Déplacée vers le bas de 8 unités.
+                              - transform opacity-0: Invisible par défaut.
+                              - transition-all: Anime toutes les propriétés qui changent.
+                              - group-hover:translate-y-0: Au survol du `group`, revient à sa position verticale d'origine.
+                              - group-hover:opacity-100: Au survol du `group`, devient visible.
+                            -->
+                            <div class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
+                                <p class="text-sm text-white">
+                                    Courte description du projet, les technologies utilisées (React, Node.js, etc.) et ce que vous avez appris.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projet 2 -->
+                <!-- La structure de la carte 2 est identique à la première -->
+                <div class="group relative block bg-black rounded-lg shadow-lg overflow-hidden"><img alt="Aperçu du projet 2" src="https://placehold.co/600x400/6b7280/white?text=Projet+2" class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50" /><div class="relative p-8"><p class="text-sm font-medium uppercase tracking-widest text-gray-400">Application Mobile</p><p class="text-2xl font-bold text-white">Nom du Projet 2</p><div class="mt-64"><div class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"><p class="text-sm text-white">Courte description du projet, les technologies utilisées (Vue, Firebase, etc.) et les défis rencontrés.</p></div></div></div></div>
+                <!-- Projet 3 -->
+                <!-- La structure de la carte 3 est identique à la première -->
+                <div class="group relative block bg-black rounded-lg shadow-lg overflow-hidden"><img alt="Aperçu du projet 3" src="https://placehold.co/600x400/10b981/white?text=Projet+3" class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50" /><div class="relative p-8"><p class="text-sm font-medium uppercase tracking-widest text-green-400">Design UI/UX</p><p class="text-2xl font-bold text-white">Nom du Projet 3</p><div class="mt-64"><div class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"><p class="text-sm text-white">Courte description de ce projet personnel ou scolaire, mettant en avant une compétence spécifique.</p></div></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                    FOOTER                    -->
+    <!-- ============================================ -->
+    <!-- 
+      Pied de page :
+      - bg-gray-900: Fond très sombre, cohérent avec la barre de navigation.
+      - text-white: Texte blanc.
+    -->
+    <footer class="bg-gray-900 text-white">
+        <!-- 
+          Conteneur principal du footer :
+          - py-12: Grand padding vertical pour donner de l'espace.
+        -->
+        <div class="container mx-auto px-6 py-12">
+            <!-- 
+              Layout Flexbox pour centrer le contenu :
+              - flex flex-col: Organise les éléments en colonne.
+              - items-center: Centre les éléments horizontalement.
+              - text-center: Centre le texte.
+            -->
+            <div class="flex flex-col items-center text-center">
+                <!-- 
+                  Liens vers les réseaux sociaux :
+                  - flex space-x-6: Aligne les icônes horizontalement avec un espace entre elles.
+                  - mb-6: Marge en bas pour espacer les icônes du copyright.
+                -->
+                <div class="flex space-x-6 mb-6">
+                    <!-- Lien GitHub : REMPLACEZ PAR VOTRE LIEN -->
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors duration-300">
+                        <span class="sr-only">GitHub</span>
+                        <svg class="w-8 h-8" fill="currentColor" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                    </a>
+                    <!-- Lien LinkedIn : REMPLACEZ PAR VOTRE LIEN -->
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors duration-300">
+                        <span class="sr-only">LinkedIn</span>
+                        <svg class="w-8 h-8" fill="currentColor" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                    </a>
+                </div>
+                <!-- Mention de Copyright -->
+                <p class="text-gray-400 text-sm">
+                    &copy; 2024 Paul David. Tous droits réservés.
+                </p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
-
